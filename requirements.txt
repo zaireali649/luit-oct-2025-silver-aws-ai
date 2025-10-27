@@ -11,9 +11,10 @@ jupyterlab>=4.0.0
 jupyter_contrib_nbextensions>=0.7.0
 nbstripout>=0.6.0
 
-# AWS SDK and AI Services
+# AWS SDK and AI Services (used in Week 2+)
 boto3>=1.28.0
 awscli>=2.13.0
+sagemaker>=2.190.0
 
 # Development and Code Quality
 black>=23.0.0

@@ -32,15 +32,34 @@ This repository contains hands-on learning materials for the AWS Certified AI Pr
 
 ## 🎓 Learning Objectives
 
-By completing this course, you will:
+### Completed Learning Outcomes ✅
 
-- ✅ Differentiate between AI, ML, Deep Learning, and Generative AI
-- ✅ Implement supervised and unsupervised learning algorithms
-- ✅ Identify and address overfitting and underfitting in ML models
-- ✅ Execute the complete ML lifecycle from data preparation to model evaluation
-- ✅ Build, train, and evaluate ML models using industry-standard tools
-- ✅ Apply DevOps practices to ML model development and deployment
-- ✅ Integrate AWS AI services into real-world applications
+After completing the first three sessions, you will be able to:
+
+- **Understand AI/ML Fundamentals**: Differentiate between AI, ML, Deep Learning, and Generative AI
+- **Classification Concepts**: Distinguish between supervised vs unsupervised learning, and classification vs regression
+- **Model Training**: Execute the complete ML lifecycle from data preparation to model evaluation
+- **Evaluation Metrics**: Explain and compute key metrics including accuracy, precision, recall, and F1 score
+- **Confusion Matrix**: Interpret confusion matrices and understand their practical implications
+- **Real-world Applications**: Relate evaluation metrics to business decision-making scenarios
+- **Hands-on Skills**: Build, train, and evaluate ML models using scikit-learn
+- **Data Analysis**: Work with real datasets (Iris, Titanic) and perform exploratory data analysis
+- **Model Interpretation**: Understand overfitting, underfitting, and feature importance
+- **Cloud ML Training**: Deploy and manage ML training jobs using Amazon SageMaker
+- **AWS Infrastructure**: Set up SageMaker Studio domains using CloudFormation templates
+- **S3 Integration**: Upload datasets and retrieve model artifacts from S3 buckets
+- **Managed Training**: Use SKLearn Estimator for scalable, reproducible model training
+- **Cloud Monitoring**: Monitor training jobs through CloudWatch logs and metrics
+- **Secure ML Workflows**: Understand IAM roles and permissions for ML operations
+
+### Future Learning Goals 🎯
+
+Additional objectives will be added as the course progresses, including:
+- Advanced ML techniques and algorithms
+- Additional AWS AI services integration
+- MLOps and deployment practices
+- Deep learning and neural networks
+- Model deployment and inference endpoints
 
 ## 📚 Prerequisites
 
@@ -110,47 +129,86 @@ luit-oct-2025-silver-aws-ai/
 ├── README.md                          # Project documentation
 ├── requirements.txt                   # Python dependencies
 ├── .gitignore                        # Git ignore rules
-├── .env.example                      # Environment variables template
+├── .github/                          # GitHub templates and workflows
+│   └── pull_request_template.md     # PR template
 ├── caip_01_01/                       # Week 1, Call 1 materials
-│   ├── caip_week1_call1.ipynb       # Main learning notebook
+│   ├── caip_week1_call1.ipynb       # Introduction to AI/ML fundamentals
 │   ├── *.png                        # Supporting images and diagrams
 │   └── caip_week1_call1_intro_to_ai_ml.pdf  # Reference materials
-├── notebooks/                        # Additional practice notebooks
-├── data/                            # Sample datasets
-├── models/                          # Trained model artifacts
-├── scripts/                         # Utility scripts
-├── tests/                           # Unit tests
-└── docs/                           # Additional documentation
+├── caip_01_02/                       # Week 1, Call 2 materials
+│   ├── caip_week1_call2.ipynb       # Model evaluation and metrics
+│   ├── caip01_week1_call2.pdf       # Reference materials
+│   ├── train.csv                    # Titanic training dataset
+│   └── test.csv                     # Titanic test dataset
+└── caip_02_01/                       # Week 2, Call 1 materials
+    ├── caip_week2_call1.ipynb       # Train and evaluate in the cloud
+    ├── caip_week2_call1.pdf         # Reference materials
+    ├── cf_templates/                # CloudFormation templates
+    │   └── sagemaker_infra.yaml     # SageMaker infrastructure setup
+    ├── train_model.py               # Training script for SageMaker
+    ├── requirements.in              # Training script dependencies
+    ├── cleaned_titanic.csv          # Preprocessed dataset
+    ├── train.csv                    # Original training data
+    ├── test.csv                     # Original test data
+    └── *.png                        # Supporting images and diagrams
 ```
 
 ## 🗺️ Learning Path
 
 ### Week 1: AI/ML Fundamentals
-- **Call 1**: Introduction to AI, ML, DL, and GenAI
-  - 📓 [`caip_01_01/caip_week1_call1.ipynb`](caip_01_01/caip_week1_call1.ipynb)
-  - Topics: AI concepts, supervised vs unsupervised learning, overfitting/underfitting
-  - Hands-on: Build and evaluate classification models
 
-### Week 2: Advanced ML Concepts
-- **Call 2**: Deep Learning and Neural Networks
-- **Call 3**: Model Evaluation and Selection
+#### Call 1: Introduction to AI, ML, DL, and GenAI ✅ *Completed*
+- 📓 [`caip_01_01/caip_week1_call1.ipynb`](caip_01_01/caip_week1_call1.ipynb)
+- **Topics Covered:**
+  - Differences between AI, ML, Deep Learning, and Generative AI
+  - Supervised vs Unsupervised Learning (with practical examples)
+  - Classification vs Regression problems
+  - Overfitting vs Underfitting concepts
+  - Feature importance analysis
+  - Complete ML lifecycle: Prepare → Train → Predict & Evaluate
+- **Hands-on Experience:**
+  - Built classification models using scikit-learn
+  - Worked with the Iris dataset
+  - Created decision trees and evaluated model performance
+  - Visualized data patterns and model decision boundaries
 
-### Week 3: AWS AI Services
-- **Call 4**: Introduction to AWS AI/ML Services
-- **Call 5**: Hands-on with Amazon SageMaker
+#### Call 2: Model Evaluation - "How Good Is Your Model?" ✅ *Completed*
+- 📓 [`caip_01_02/caip_week1_call2.ipynb`](caip_01_02/caip_week1_call2.ipynb)
+- **Topics Covered:**
+  - Introduction to Kaggle and the Titanic dataset
+  - Key evaluation metrics: Accuracy, Precision, Recall, F1 Score
+  - Understanding and interpreting confusion matrices
+  - Why accuracy alone can be misleading
+  - Real-world application of metrics (Facebook Marketplace gun detection example)
+  - Trade-offs between different types of errors (false positives vs false negatives)
+- **Hands-on Experience:**
+  - Loaded and preprocessed the Titanic dataset
+  - Built and evaluated classification models
+  - Computed and visualized evaluation metrics
+  - Interpreted classification reports and confusion matrices
 
-### Week 4: Generative AI and LLMs
-- **Call 6**: Understanding Large Language Models
-- **Call 7**: AWS Bedrock and Foundation Models
+### Week 2: Cloud-Based ML with AWS SageMaker
 
-### Week 5: Practical Applications
-- **Call 8**: Computer Vision with AWS Rekognition
-- **Call 9**: Natural Language Processing with AWS Comprehend
+#### Call 1: Train and Evaluate in the Cloud ✅ *Completed*
+- 📓 [`caip_02_01/caip_week2_call1.ipynb`](caip_02_01/caip_week2_call1.ipynb)
+- **Topics Covered:**
+  - Benefits of cloud-based ML training (scalability, reproducibility, separation of concerns)
+  - Infrastructure setup using CloudFormation templates
+  - SageMaker Studio domain and IAM role configuration
+  - S3 integration for data storage and model artifacts
+  - SKLearn Estimator for managed training jobs
+  - CloudWatch logging and monitoring
+  - Secure ML workflows with proper permissions
+- **Hands-on Experience:**
+  - Deployed SageMaker infrastructure programmatically
+  - Uploaded datasets to S3 buckets
+  - Created and executed training scripts for SageMaker
+  - Launched managed training jobs using SKLearn Estimator
+  - Monitored training progress through CloudWatch logs
+  - Retrieved and analyzed model artifacts from S3
 
-### Week 6: Deployment and Operations
-- **Call 10**: MLOps and Model Deployment
-- **Call 11**: Monitoring and Maintenance
-- **Call 12**: Final Project and Review
+### Future Sessions
+*Content will be added as sessions are completed*
 
 ## 🔧 DevOps Best Practices
 
@@ -239,30 +297,6 @@ export AWS_SECRET_ACCESS_KEY=your_secret
 export AWS_DEFAULT_REGION=us-east-1
 ```
 
-### Getting Help
-- 📧 **Course Support**: [support@example.com](mailto:support@example.com)
-- 💬 **Discord Community**: [Join our Discord](https://discord.gg/example)
-- 📚 **AWS Documentation**: [AWS AI/ML Docs](https://docs.aws.amazon.com/machine-learning/)
-
-## 🤝 Contributing
-
-We welcome contributions to improve the learning experience!
-
-### How to Contribute
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/improvement`)
-3. Make your changes
-4. Add tests if applicable
-5. Commit your changes (`git commit -am 'Add new feature'`)
-6. Push to the branch (`git push origin feature/improvement`)
-7. Create a Pull Request
-
-### Contribution Guidelines
-- Follow PEP 8 style guide for Python code
-- Add docstrings to all functions and classes
-- Include tests for new functionality
-- Update documentation as needed
-
 ## 📖 Resources
 
 ### Official AWS Resources
@@ -282,10 +316,6 @@ We welcome contributions to improve the learning experience!
 - [Papers with Code](https://paperswithcode.com/)
 
 ---
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🏷️ Tags
 
